@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Mood Organ</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css' />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body ng-controller="MoodOrganController">
+    <div class="jumbotron">
+      <h1>Mood Organ</h1>
+      <div class="row">
+        <input class="panel" type="search" ng-model="search.$" ng-init="null" ng-focus="expression" placeholder="Search Moods..." />
+      </div>
+      <div class="row">
+        <ul class="moodlist-animate-container">
+          <li class="animate-repeat list-unstyled" ng-repeat="mood in moodlist | filter:search">
+            [{{$index + 1}}] <strong>{{mood.id}}</strong>: "{{mood.body}}" created by {{mood.from | uppercase}}.
+          </li>
+        </ul>
+      </div>
+      <h3>Create a Mood</h3>
+      <input class="panel" type="text" ng-model="name" placeholder="Creator...(your name)" />
+      <input class="panel" type="number" ng-model="idnumber" placeholder="Number to ID Mood" />
+      <input class="panel" type="text" ng-model="mood" placeholder="Mood description" />
+      <button class="btn btn-danger" ng-model="click" ng-click="addMood($event)">Submit</button>
+    </div> 
+    <div class="row">
+      <div id="messagesDiv">
+        <div ng-repeat="mood in moodlist | filter:search"><em>{{mood.from}}</em><br/>{{mood.id}}: {{mood.body}}</div>
+      </div>
+    </div>
+    <script>
+      var app = angular.module("myapp", ["firebase"]);
+      app.controller('MoodOrganController', function($scope, $firebase) {
+        var ref = new Firebase("https://mood-organ.firebaseio.com/mood-test-library");
+        $scope.moodlist = $firebase(ref);
+        $scope.addMood = function() { 
+          $scope.moodlist.$add({from: $scope.name, id: $scope.idnumber, body: $scope.mood});
+          $scope.mood = "";
+          $scope.idnumber = "";
+        }
+      });
+      app.filter('MoodSearch', function($scope, $firebase) {
+
+      });
+    </script>
+  </body>
+</html>
