@@ -52,23 +52,23 @@
 
 
 
-<script>
-var app = angular.module("myapp", ["firebase"]);
-app.controller('MoodOrganController', function($scope, $firebase) {
-    var ref = new Firebase("https://mood-organ.firebaseio.com/mood-library");
-    $scope.moodlist = $firebase(ref);
-    $scope.addMood = function() {
+// <script>
+// var app = angular.module("myapp", ["firebase"]);
+// app.controller('MoodOrganController', function($scope, $firebase) {
+//     var ref = new Firebase("https://mood-organ.firebaseio.com/mood-library");
+//     $scope.moodlist = $firebase(ref);
+//     $scope.addMood = function() {
 
-        $scope.moodlist.$add({
-            from: $scope.name,
-            id: $scope.idnumber,
-            body: $scope.mood
-        });
-        $scope.mood = "";
-        $scope.idnumber = "";
-    }
-});
-app.filter('MoodSearch', function($scope, $firebase) {
+//         $scope.moodlist.$add({
+//             from: $scope.name,
+//             id: $scope.idnumber,
+//             body: $scope.mood
+//         });
+//         $scope.mood = "";
+//         $scope.idnumber = "";
+//     }
+// });
+// app.filter('MoodSearch', function($scope, $firebase) {
 
-});
-</script>
+// });
+// </script>

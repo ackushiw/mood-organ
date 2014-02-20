@@ -1,10 +1,15 @@
 'use strict';
 
-angular.module('moodOrganApp')
-  .controller('MoodOrganController', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+moodApp.controller('MoodOrganController', function ($scope) {
+    $scope.mood = {
+    	id: '',
+    	title: '',
+    	decription: '',
+    	author: '',
+    	time: '',
+    	tag: '#'
+    	rating: 0,
+    	shared: 0,
+    };
   });

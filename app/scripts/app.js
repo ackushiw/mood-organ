@@ -1,6 +1,7 @@
 'use strict';
+/* global moodApp:true */
 
-angular.module('moodOrganApp', [
+var moodApp = angular.module('moodOrganApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -9,7 +10,7 @@ angular.module('moodOrganApp', [
   'angularfire.login',
   'firebase'
 ])
-  .config(function ($routeProvider) {
+moodApp.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -24,7 +25,7 @@ angular.module('moodOrganApp', [
         redirectTo: '/'
       });
   })
-  .run(['loginService', '$rootScope', 'FBURL', function(loginService, $rootScope, FBURL) {
+moodApp.run(['loginService', '$rootScope', 'FBURL', function(loginService, $rootScope, FBURL) {
       if( FBURL === 'https://INSTANCE.firebaseio.com' ) {
          // double-check that the app has been configured
          angular.element(document.body).html('<h1>Please configure app/js/config.js before running!</h1>');
