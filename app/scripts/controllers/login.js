@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('moodOrganApp')
-  .controller('LoginController', function($scope, simpleLogin, $location) {
+  .controller('LoginCtrl', function($scope, simpleLogin, $location) {
     $scope.pass = null;
     $scope.err = null;
     $scope.email = null;
