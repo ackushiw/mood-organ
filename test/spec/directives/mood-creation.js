@@ -12,9 +12,8 @@ describe('Directive: MoodCreation', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('should compile', inject(function ($compile) {
     element = angular.element('<-mood-creation></-mood-creation>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the MoodCreation directive');
   }));
 });

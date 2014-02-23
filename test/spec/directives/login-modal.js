@@ -12,9 +12,8 @@ describe('Directive: loginModal', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('should compile', inject(function ($compile) {
     element = angular.element('<login-modal></login-modal>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the loginModal directive');
   }));
 });
