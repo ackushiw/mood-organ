@@ -14,4 +14,6 @@ angular.module('moodOrganApp')
   .constant('loginProviders', 'facebook,twitter,password')
 
   // your Firebase URL goes here
-  .constant('FBURL', 'https://mood-organ.firebaseio.com');
+  .constant('FBURL', 'https://mood-organ.firebaseio.com')
+  
+  .constant('moodPath', 'mood-test-library');

@@ -1,56 +1,17 @@
 <div ng-controller="MainCtrl">
-    <div class="jumbotron">
-        <h1>Mood Organ</h1>
-        <div class="row">
-            <div class="col-sm-12">
-                <input class="panel col-sm-12" type="search" ng-model="search.$" ng-init="null" placeholder="Search Moods...">
-            </div>
-        </div>
-        <div>
-            <ul class="moodlist-animate-container">
-                <li class="animate-repeat" ng-repeat="mood in moodlist">
-                    [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
-                </li>
-            </ul>
-        </div>
-        <br/>
-        <button class="btn-sm btn-primary col-sm-12" data-toggle="modal" data-target="#loginModal">Log on</button>
-        <br/>
-        <div class="MoodCreation"></div>
-    </div>
-
+  <div class="jumbotron">
+    <h1>Mood Organ</h1>
     <div class="row">
-        <div id="messagesDiv" class="col-sm-12">
-            <div ng-repeat="mood in moodlist">
-                <em>{{mood.from}}</em>
-                <br/>{{mood.id}}: {{mood.body}}</div>
-        </div>
+      <input class="form-control" type="search" ng-model="search" placeholder="Search Moods..." />
     </div>
+    <div class="row">
+      <ul class="moodlist-animate-container list-unstyled">
+        <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict">
+          [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+        </li>
+      </ul>
+      <button class="btn-lg btn-primary" data-toggle="modal" data-target="#loginModal">Log on</button>
+    </div>
+  </div>
 </div>
-
-
 <login-modal></login-modal>
-
-
-
-
-<script>
-// var app = angular.module("myapp", ["firebase"]);
-// app.controller('MoodOrganController', function($scope, $firebase) {
-//     var ref = new Firebase("https://mood-organ.firebaseio.com/mood-library");
-//     $scope.moodlist = $firebase(ref);
-//     $scope.addMood = function() {
-
-//         $scope.moodlist.$add({
-//             from: $scope.name,
-//             id: $scope.idnumber,
-//             body: $scope.mood
-//         });
-//         $scope.mood = "";
-//         $scope.idnumber = "";
-//     }
-// });
-// app.filter('MoodSearch', function($scope, $firebase) {
-
-// });
-</script>
