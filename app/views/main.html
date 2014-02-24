@@ -1,27 +1,55 @@
 <div ng-controller="MainCtrl">
-    <div class="jumbotron">
-        <h1>Mood Organ</h1>
-        <div class="row">
-            <div class="col-sm-12">
-                <input class="panel col-sm-12" type="search" ng-model="search.$" ng-init="null" placeholder="Search Moods...">
-            </div>
-        </div>
-        <div>
-            <ul class="moodlist-animate-container">
-                <li class="animate-repeat" ng-repeat="mood in moodlist">
-                    [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
-                </li>
-            </ul>
-        </div>
-        <br/>
-        <button class="btn-sm btn-primary col-sm-12" data-toggle="modal" data-target="#loginModal">Log on</button>
-        <br/>
-        <div class="MoodCreation"></div>
-    </div>
+
 
     <div class="row">
-        <div id="messagesDiv" class="col-sm-12">
-            <div ng-repeat="mood in moodlist">
+        <!-- <div class="col-sm-4"></div> -->
+        <div class="jumbotron col-sm-4 col-sm-offset-4 rounded">
+            <h1>Mood Organ</h1>
+            <div class="row">
+                <div class="col-sm-12">
+                    <input class="panel col-sm-12" type="search" ng-model="search.$" ng-init="null" placeholder="Search Moods...">
+                </div>
+            </div>
+            <div>
+                <ul class="moodlist-animate-container">
+                    <li class="animate-repeat" ng-repeat="mood in moodlist">
+                        [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                    </li>
+                </ul>
+            </div>
+            <br/>
+            <button class="btn-sm btn-primary col-sm-12" data-toggle="modal" data-target="#loginModal">Log on</button>
+            <br/>
+            <div class="MoodCreation"></div>
+        </div>
+        <!-- <div class="col-sm-4"></div> -->
+    </div>
+
+
+    <div class="row">
+        <div id="messagesDiv" class="col-sm-4 jumbotron highlight-mood">
+            <h4>Most Shared Moods</h4>
+            <div ng-repeat="mood in moodlist | order by shared, limit 1">
+                <em>{{mood.from}}</em>
+                <br/>{{mood.id}}: {{mood.body}}</div>
+        </div>
+        <div id="messagesDiv" class="col-sm-4 col-sm-offset-4 jumbotron highlight-mood">
+            <h4>Highest Rated Moods</h4>
+            <div ng-repeat="mood in moodlist | order by rating, limit 1">
+                <em>{{mood.from}}</em>
+                <br/>{{mood.id}}: {{mood.body}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="messagesDiv" class="col-sm-4">
+            <h4>shared list</h4>
+            <div ng-repeat="mood in moodlist | order by shared, limit 10">
+                <em>{{mood.from}}</em>
+                <br/>{{mood.id}}: {{mood.body}}</div>
+        </div>
+        <div id="messagesDiv" class="col-sm-4 col-sm-offset-4">
+            <h4>ratings list</h4>
+            <div ng-repeat="mood in moodlist | order by rating, limit 10">
                 <em>{{mood.from}}</em>
                 <br/>{{mood.id}}: {{mood.body}}</div>
         </div>

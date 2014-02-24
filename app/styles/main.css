@@ -38,7 +38,8 @@ h1, h2, h3, h4 ,h5 {
 /* Customize container */
 @media (min-width: 768px) {
   .container-fluid {
-    max-width: 90%;
+    max-width: 100%;
+    overflow: visible;
   }
 }
 .container-narrow > hr {
