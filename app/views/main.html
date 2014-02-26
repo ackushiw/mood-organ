@@ -1,15 +1,15 @@
 <div ng-controller="MainCtrl">
     <div class="moodNav"><nav class="navbar navbar-default">
     <ul class="nav nav-pills navbar-left">
-        <li class="btn active"><a href="#">Home</a></li>
-        <li class="btn"><a data-toggle="collapse" data-parent="#search" href=".collapseSearch"></a>Advanced Search</li>
+        <li class="btn active"><a href="#">Moods</a></li>
+        <li class="btn"><a class="btn" data-toggle="collapse" data-parent="#search" ng-href="/creation"></a>Creation</li>
         <li class="btn pull-right"><a href="#"></a>Support</li>
         <li class="btn pull-right"><a href="#"></a>Log on</li>
     </ul>
     <ul class="nav nav-pills navbar-nav navbar-right">
         
         <li class="btn"><a href="#"></a>Support</li>
-        <li class="btn"><a href="#"></a>Log on</li>
+        <li class="btn"><a href="#"></a>Log off</li>
     </ul>
     
 </nav></div>
@@ -35,11 +35,11 @@
                 <div class="row">
                     <button class="btn-lg btn-primary" data-toggle="collapse" data-parent="#search" href=".collapseSearch">Advanced Search</button>
                 </div>
-                
+               
                 <div class="row">
                     <ul class="moodlist-animate-container list-unstyled">
                         <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict">
-                            [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                            [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
                         </li>
                     </ul>
                     <button class="btn-lg btn-danger" data-toggle="" data-target="">Share Mood</button>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <ul class="moodlist-animate-container list-unstyled">
                         <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict | limitTo: 1">
-                            [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                            [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
                         </li>
                     </ul>
                     
@@ -71,7 +71,7 @@
                 <div class="row">
                     <ul class="moodlist-animate-container list-unstyled">
                         <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict | limitTo: 1">
-                            [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                            [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
                         </li>
                     </ul>
                     

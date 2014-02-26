@@ -14,6 +14,7 @@ angular.module('moodOrganApp')
   };
   //syncData is defined in services/firebase.js, it is the easiest way to get at the data. moodPath is a constant defined in angularfire/config.js
   $scope.moodlist = syncData(moodPath, 10);
+
   
   //not used for now.
   $scope.addMood = function() {
