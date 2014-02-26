@@ -1,17 +1,84 @@
 <div ng-controller="MainCtrl">
-  <div class="jumbotron">
-    <h1>Mood Organ</h1>
+    <div class="moodNav"><nav class="navbar navbar-default">
+    <ul class="nav nav-pills navbar-left">
+        <li class="btn active"><a href="#">Home</a></li>
+        <li class="btn"><a data-toggle="collapse" data-parent="#search" href=".collapseSearch"></a>Advanced Search</li>
+        <li class="btn pull-right"><a href="#"></a>Support</li>
+        <li class="btn pull-right"><a href="#"></a>Log on</li>
+    </ul>
+    <ul class="nav nav-pills navbar-nav navbar-right">
+        
+        <li class="btn"><a href="#"></a>Support</li>
+        <li class="btn"><a href="#"></a>Log on</li>
+    </ul>
+    
+</nav></div>
     <div class="row">
-      <input class="form-control" type="search" ng-model="search" placeholder="Search Moods..." />
+
+        <div class="col-sm-4 col-sm-offset-4">
+            <div id="search" class="jumbotron main-search">
+                <h1>Mood Organ</h1>
+                <br/>
+                <div id="defaultSearch" class="row collapse in collapseSearch">
+                    <input class="form-control" type="search" ng-model="search" placeholder="Search Moods..." />
+                </div>
+                <div id="advancedSearch" class="row collapse form-control collapseSearch">
+                    <input type="text" class="col-sm-2" ng-model="search.id" placeholder="ID">
+                    <input type="text" class="col-sm-2" ng-model="search.author" placeholder="Author">
+                    <input type="text" class="col-sm-2" ng-model="search.title" placeholder="Mood">
+                    <input type="text" class="col-sm-2" ng-model="search.tag" placeholder="#Tag">
+                    <input type="text" class="col-sm-2" ng-model="serach.rating" placeholder="Rating">
+                    <input type="text" class="col-sm-2" ng-model="search.date" placeholder="Date">
+                    
+                </div>
+                <br/>
+                <div class="row">
+                    <button class="btn-lg btn-primary" data-toggle="collapse" data-parent="#search" href=".collapseSearch">Advanced Search</button>
+                </div>
+                
+                <div class="row">
+                    <ul class="moodlist-animate-container list-unstyled">
+                        <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict">
+                            [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                        </li>
+                    </ul>
+                    <button class="btn-lg btn-danger" data-toggle="" data-target="">Share Mood</button>
+                    <button class="btn-lg btn-primary" data-toggle="modal" data-target="#loginModal">Log on</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
-      <ul class="moodlist-animate-container list-unstyled">
-        <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict">
-          [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
-        </li>
-      </ul>
-      <button class="btn-lg btn-primary" data-toggle="modal" data-target="#loginModal">Log on</button>
+
+        <div class="col-sm-4">
+            <div class="jumbotron featured-mood">
+                <h3>Most Shared Mood</h3>
+                
+                <div class="row">
+                    <ul class="moodlist-animate-container list-unstyled">
+                        <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict | limitTo: 1">
+                            [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="jumbotron featured-mood">
+                <h3>Highest Rated Mood</h3>
+                
+                <div class="row">
+                    <ul class="moodlist-animate-container list-unstyled">
+                        <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict | limitTo: 1">
+                            [{{$index + 1}}] {{mood.id}}: {{mood.body}} created by {{mood.from}}.
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
 </div>
 <login-modal></login-modal>
