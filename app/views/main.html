@@ -1,18 +1,5 @@
 <div ng-controller="MainCtrl">
-    <div class="moodNav"><nav class="navbar navbar-default">
-    <ul class="nav nav-pills navbar-left">
-        <li class="btn active"><a href="#">Moods</a></li>
-        <li class="btn"><a class="btn" data-toggle="collapse" data-parent="#search" ng-href="/creation"></a>Creation</li>
-        <li class="btn pull-right"><a href="#"></a>Support</li>
-        <li class="btn pull-right"><a href="#"></a>Log on</li>
-    </ul>
-    <ul class="nav nav-pills navbar-nav navbar-right">
-        
-        <li class="btn"><a href="#"></a>Support</li>
-        <li class="btn"><a href="#"></a>Log off</li>
-    </ul>
-    
-</nav></div>
+    <div class="moodNav"></div>
     <div class="row">
 
         <div class="col-sm-4 col-sm-offset-4">
@@ -23,6 +10,7 @@
                     <input class="form-control" type="search" ng-model="search" placeholder="Search Moods..." />
                 </div>
                 <br/>
+                <div class="moodCreation"></div>
                
                 <div class="row">
                     <ul class="moodlist-animate-container list-unstyled">

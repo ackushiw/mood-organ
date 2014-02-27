@@ -16,14 +16,25 @@ angular.module('moodOrganApp')
   $scope.moodlist = syncData(moodPath, 10);
 
   
-  //not used for now.
-  $scope.addMood = function() {
-    $scope.moodlist.push({
-      from: $scope.name,
-      id: $scope.idnumber,
-      body: $scope.mood
-    });
-    $scope.mood = $scope.emptyMood;
+    $scope.addMood = function() {
+    	//changed from push to add as came up with errors
+        $scope.moodlist.$add({
+        	//test fields
+            from: $scope.auth.user.username,
+            id: $scope.idnumber,
+            body: $scope.mood
+            //final fields
+            author: $scope.auth.user.username,
+            decription: $scope.mood,
+            id: idnumber,
+            rating: 0,
+            shared: 0,
+            tag: $scope.hash,
+            //this would be the timestamp of the add to firebase
+            time: '',
+            title: ''
+        });
+        $scope.mood = $scope.emptyMood;
   };
 });
 
