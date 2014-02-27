@@ -11,7 +11,7 @@ angular.module('moodOrganApp')
   .constant('loginRedirectPath', '/login')
 
   // which login service we're using
-  .constant('loginProviders', 'facebook,twitter,password')
+  .constant('loginProviders', 'facebook,twitter')
 
   // your Firebase URL goes here
   .constant('FBURL', 'https://mood-organ.firebaseio.com')
