@@ -20,19 +20,20 @@ angular.module('moodOrganApp')
     	//changed from push to add as came up with errors
         $scope.moodlist.$add({
         	//test fields
-            from: $scope.auth.user.username,
-            id: $scope.idnumber,
-            body: $scope.mood
+            //from: $scope.auth.user.username,
+            //id: $scope.idnumber,
+            //body: $scope.mood
+
             //final fields
-            author: $scope.auth.user.username,
+            from: $scope.auth.user.username,
             decription: $scope.mood,
-            id: idnumber,
+            id: $scope.idnumber,
             rating: 0,
             shared: 0,
             tag: $scope.hash,
             //this would be the timestamp of the add to firebase
-            time: '',
-            title: ''
+            time: new Date(),
+            title: $scope.mood
         });
         $scope.mood = $scope.emptyMood;
   };
