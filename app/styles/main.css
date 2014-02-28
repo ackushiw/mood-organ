@@ -9,15 +9,14 @@ h1, h2, h3, h4 ,h5 {
 }
 /*Nav*/
 .navbar{
-  position: absolute;
+  position: fixed;
   width: 100%;
   padding: 10px 2%;
   margin-top: 160px;
 }
 /*main search box*/
 .main-search{
-  position: absolute;
-  width: 95%;
+  position: fixed;
   z-index: 1000;
 
 }

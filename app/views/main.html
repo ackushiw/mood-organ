@@ -3,7 +3,7 @@
     <div class="row">
 
         <div class="col-sm-4 col-sm-offset-4">
-            <div id="search" class="jumbotron main-search">
+            <div id="search" class="col-sm-4 jumbotron main-search">
                 <h1>Mood Organ</h1>
                 <br/>
                 <div id="defaultSearch" class="row collapse in collapseSearch">
@@ -25,7 +25,7 @@
             
         </div>
     </div>
-    <div class="row">
+    <div class="row-fluid">
 
         <div class="col-sm-4">
             <div class="jumbotron featured-mood">
@@ -33,7 +33,7 @@
                 
                 <div class="jumbotron">
                     <ul class="moodlist-animate-container list-unstyled">
-                        <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict | limitTo: 1">
+                        <li class="animate-repeat shared-list{{$index + 1}}" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict | limitTo: 10">
                             [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
                         </li>
                     </ul>
@@ -57,10 +57,10 @@
 
     </div>
     <br/>
-    <div class="row">
+    <div class="row-fluid">
         <div id="test" class="jumbotron col-sm-4 col-sm-offset-4">
                 <h3>Test of Mood Creation</h3>
-                    <div class="row">
+                    <div>
                         <ul class="list-unstyled">
                             <li class="animate-repeat" ng-repeat="mood in moodlist | orderByPriority | filter:search:strict">
                                 [{{$index + 1}}] <b>id={{mood.id}}</b>: Title={{mood.title}} description={{mood.decription}} <i>created by <b>author={{mood.author}}</b></i> @{{mood.time}}. Rating = {{mood.rating}} Shared={{mood.shared}}. Tags = {{mood.tag}}
