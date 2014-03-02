@@ -1,29 +1,10 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
   font-family: 'Aldrich', sans-serif;
+  padding-top: 70px;
 }
 h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
-}
-/*Nav*/
-.navbar{
-  position: absolute;
-  width: 100%;
-  padding: 10px 2%;
-  margin-top: 160px;
-}
-/*main search box*/
-.main-search{
-  position: absolute;
-  width: 95%;
-  z-index: 1000;
-
-}
-/*featured moods*/
-.featured-mood{
-  margin-top:50%;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

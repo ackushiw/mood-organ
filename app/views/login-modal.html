@@ -1,4 +1,4 @@
-<div ng-controller="LoginCtrl" id="loginModal" class="modal fade">
+<div id="loginModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -14,6 +14,7 @@
           </p>
         </fieldset>
         <div class="alert alert-info" ng-show="err" class="error">{{err}}</div>
+        <div ng-show-auth="error">An error occurred: {{auth.error}}</div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-warning" ng-click="cancel()" data-dismiss="modal" data-target="#loginModal">Cancel</button>
