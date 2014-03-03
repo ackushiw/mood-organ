@@ -1,12 +1,13 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
-    <ul ng-show-auth="logout" class="nav navbar-nav navbar-left">
+    <ul ng-show-auth="logout" class="nav navbar-nav navbar-left nav-pills">
       <li><a href="#">Moods</a></li>
       <li><a data-toggle="collapse" data-parent="#search">Creation</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right nav-pills">
       <li ng-show-auth="logout"><a href="#">{{auth.user.username}}</a></li>
       <li><a href="#">Support</a></li>
+      <li ng-show-auth="logout"><a type="button" data-toggle="modal" data-target="#loginModal" href="#">Log on</a></li>
       <li ng-show-auth="login"><a ng-click="simpleLogin.logout()" href="#">Log off</a></li>
     </ul>
   </div>

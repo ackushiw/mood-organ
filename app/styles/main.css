@@ -6,26 +6,7 @@ body {
 h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
 }
-<<<<<<< HEAD
-/*Nav*/
-.navbar{
-  position: fixed;
-  width: 100%;
-  padding: 10px 2%;
-  margin-top: 160px;
-}
-/*main search box*/
-.main-search{
-  position: fixed;
-  z-index: 1000;
 
-}
-/*featured moods*/
-.featured-mood{
-  margin-top:50%;
-}
-=======
->>>>>>> 8f41e1dda79422ea1bd5d49be0493650a94c2cd9
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
