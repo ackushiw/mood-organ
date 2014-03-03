@@ -2,6 +2,7 @@
 body {
   font-family: 'Aldrich', sans-serif;
   padding-top: 70px;
+  background: url('/images/metal.png');
 }
 h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
