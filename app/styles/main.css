@@ -12,6 +12,10 @@ h1, h2, h3, h4 ,h5 {
   background: rgb(155, 155, 155) transparent;
   background: rgba(155, 155, 155, 0.5);
 }
+/*Mood Gif*/
+.mood-gif{
+  opacity: 0.7;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
