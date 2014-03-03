@@ -22,6 +22,8 @@ angular.module('moodOrganApp')
   
   // again this will be something similar, the highest rated mood in the recent history
   $scope.ratedMoodlist = syncData(moodPath, 1);
+
+  $scope.latestMoodlist = syncData(moodPath, 1);
   
   $scope.addMood = function() {
     //changed from push to add as came up with errors
