@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div ng-controller="MainCtrl">
     <div class="moodNav"></div>
     <div class="row">
@@ -68,6 +69,46 @@
                         </ul>
                     </div>
             </div>
+=======
+<div class="moodNav"></div>
+<div class="row">
+  <div class="col-md-4 col-sm-3">
+    <button type="button" ng-show-auth="logout" class="btn btn-large" data-toggle="modal" data-target="#loginModal" href="#">Log on</button>
+    <div ng-show-auth="login" class="moodCreation"></div>
+  </div>
+  <div class="col-md-4 col-sm-6 well well-lg">
+    <div id="search" class="main-search">
+      <h1 style="text-align: center;">Mood Organ</h1>
+      <div id="defaultSearch" class="collapse in collapseSearch">
+        <input class="form-control input-lg" type="search" ng-model="search" placeholder="Search Moods..." />
+      </div>
+      <ul class="moodlist-animate-container list-unstyled">
+        <li class="animate-repeat" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict">
+          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+        </li>
+      </ul>
+      <button class="btn-lg btn-danger" data-toggle="" data-target="">Share Mood</button>
+      <button class="btn-lg btn-primary" data-toggle="modal" data-target="#loginModal" ng-show-auth="logout">Log on</button>
+    </div>    
+  </div>
+  <div class="col-md-4 col-sm-3 featured-mood">
+    <h3>Highest Rated Mood</h3>       
+    <div class="well well-lg">
+      <ul class="moodlist-animate-container list-unstyled">
+        <li class="animate-repeat" ng-repeat="mood in ratedMoodlist">
+          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+        </li>                        
+      </ul>                                        
     </div>
+    <h3>Most Shared Mood</h3>
+    <div class="well well-lg">
+      <ul class="moodlist-animate-container list-unstyled">
+        <li class="animate-repeat" ng-repeat="mood in sharedMoodlist">
+          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+        </li>
+      </ul>
+>>>>>>> 8f41e1dda79422ea1bd5d49be0493650a94c2cd9
+    </div>
+  </div>
 </div>
 <login-modal></login-modal>

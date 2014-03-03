@@ -1,14 +1,13 @@
-<nav class="navbar navbar-default">
-    <ul class="nav nav-pills navbar-left">
-        <li class="btn active"><a href="#">Moods</a></li>
-        <li class="btn"><a class="btn" data-toggle="collapse" data-parent="#search" ng-href="/creation"></a>Creation</li>
-        <li class="btn pull-right"><a href="#"></a>Support</li>
-        <li class="btn pull-right"><a href="#"></a>Log on</li>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <ul ng-show-auth="logout" class="nav navbar-nav navbar-left">
+      <li><a href="#">Moods</a></li>
+      <li><a data-toggle="collapse" data-parent="#search">Creation</a></li>
     </ul>
-    <ul class="nav nav-pills navbar-nav navbar-right">
-        <li class="btn"><a href="#"></a>{{auth.user.username}}</li>
-        <li class="btn"><a href="#"></a>Support</li>
-        <li class="btn"><a href="#"></a>Log off</li>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-show-auth="logout"><a href="#">{{auth.user.username}}</a></li>
+      <li><a href="#">Support</a></li>
+      <li ng-show-auth="login"><a ng-click="simpleLogin.logout()" href="#">Log off</a></li>
     </ul>
-    
+  </div>
 </nav>

@@ -1,16 +1,22 @@
-<div>
-    <h3>Create a Mood</h3>
-    <form ng-submit="addMood($event)">
-    
-        
-        <input class="panel" type="number" ng-model="idnumber" placeholder="Number to ID Mood">
-        <input class="panel" type="text" ng-model="mood" placeholder="Mood description">
-        <input type="text" class="panel" ng-model="hash" placeholder="#tag">
-        <input type="text" class="panel" ng-model="info" placeholder="info">
-        
-        <input class="btn btn-danger" type="submit" id="submit" value="Submit">
-  
-    </form>
-
-    <!-- <button class="btn btn-danger" ng-model="click" ng-click="addMood($event)">Submit</button> -->
-</div>
+<h3>Create a Mood</h3>
+<button class="btn btn-lg" data-toggle="modal" data-target="#loginModal" href="#" ng-show-auth="logout" type="button">Log on</button>
+<form class="form-horizontal" ng-show-auth="login" ng-submit="addMood($event)" role="form">
+  <div class="form-group">
+    <label class="sr-only">Number to ID Mood</label>
+    <input class="form-control" type="number" ng-model="idnumber" placeholder="Number to ID Mood" />
+  </div>
+  <div class="form-group">
+    <label class="sr-only">Mood description</label>
+    <input class="form-control" type="text" ng-model="mood" placeholder="Mood description" />
+  </div>
+  <div class="form-group">
+    <label class="sr-only">#tag</label>
+    <input type="text" class="form-control" ng-model="hash" placeholder="#tag" />
+  </div>
+  <div class="form-group">
+    <label class="sr-only">info</label>
+    <input type="text" class="form-control" ng-model="info" placeholder="info" />
+  </div>
+  <button class="btn btn-danger" type="submit" id="submit">Submit</button>
+</form>
+<!-- <button class="btn btn-danger" ng-model="click" ng-click="addMood($event)">Submit</button> -->

@@ -1,12 +1,12 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
   font-family: 'Aldrich', sans-serif;
+  padding-top: 70px;
 }
 h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
 }
+<<<<<<< HEAD
 /*Nav*/
 .navbar{
   position: fixed;
@@ -24,6 +24,8 @@ h1, h2, h3, h4 ,h5 {
 .featured-mood{
   margin-top:50%;
 }
+=======
+>>>>>>> 8f41e1dda79422ea1bd5d49be0493650a94c2cd9
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
