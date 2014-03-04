@@ -29,7 +29,7 @@ angular.module('moodOrganApp')
     //changed from push to add as came up with errors
     $scope.searchMoodlist.$add({
       created: new Date(),
-      decription: $scope.mood,
+      decription: $scope.info,
       from: $scope.auth.user.username,
       id: $scope.idnumber,
       rating: 0,
