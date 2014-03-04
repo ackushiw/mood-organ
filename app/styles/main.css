@@ -7,10 +7,30 @@ body {
 h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
 }
-/* Well background */
-.well,.panel{
+/* Panel background */
+.panel{
   background: rgb(155, 155, 155) transparent;
   background: rgba(155, 155, 155, 0.5);
+}
+/* Featured Mood Styles*/
+.featuredMood{
+  text-align: right;
+}
+.featuredMoodList1{
+  text-align: left;
+  font-size: 200%;
+}
+.featuredMoodList2{
+  font-size: 130%;
+}
+.featuredMoodList3{
+  font-size: 100%;
+}
+.featuredMoodList4{
+  font-size: 80%;
+}
+.featuredMoodList5{
+  font-size: 50%;
 }
 /*Mood Gif*/
 .mood-gif{

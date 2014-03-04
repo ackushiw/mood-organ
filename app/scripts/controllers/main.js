@@ -18,12 +18,12 @@ angular.module('moodOrganApp')
   
   // this will be a search for the top shared moods over the last week/day/hour whatever (number of shares within a particular timeframe)
   // this is also possible in elastic search
-  $scope.sharedMoodlist = syncData(moodPath, 1);
+  $scope.sharedMoodlist = syncData(moodPath, 5);
   
   // again this will be something similar, the highest rated mood in the recent history
-  $scope.ratedMoodlist = syncData(moodPath, 1);
+  $scope.ratedMoodlist = syncData(moodPath, 5);
 
-  $scope.latestMoodlist = syncData(moodPath, 1);
+  $scope.latestMoodlist = syncData(moodPath, 5);
   
   $scope.addMood = function() {
     //changed from push to add as came up with errors
