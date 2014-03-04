@@ -6,15 +6,13 @@
     </div>
     <div class="col-md-4 col-sm-6 panel">
         <div class="nav">
-            <ul ng-show-auth="logout" class="nav navbar-nav navbar-left nav-pills">
+            <ul ng-show-auth="login" class="nav navbar-nav navbar-left nav-pills">
                 <li><a href="#">About</a>
                 </li>
-                <li ng-show-auth="logout"><a href="#">{{auth.user.username}}</a>
+                <li><a href="#">{{auth.user.username}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right nav-pills">
-                <li ng-show-auth="logout"><a href="#">{{auth.user.username}}</a>
-                </li>
                 <li><a href="#">Support</a>
                 </li>
                 <li ng-show-auth="logout"><a class="btn-primary" type="button" data-toggle="modal" data-target="#loginModal" href="#">Log on</a>
@@ -24,7 +22,7 @@
             </ul>
         </div>
         <div id="search" class="main-search">
-            <h1 style="text-align: center;">Mood Organ</h1>
+            <h1 style="text-align:center;font-size:5em;">Mood Organ</h1>
             <div id="defaultSearch" class="collapse in collapseSearch">
                 <input class="form-control input-lg" type="search" ng-model="search" ng-keydown="keypress = keypress + 0.01" ng-init="keypress = 0" placeholder="Search Moods..." />
             </div>
@@ -37,13 +35,13 @@
             <button class="btn-lg btn-danger btn-block" data-toggle="" data-target="" ng-click="keypress = 0">Share Mood</button>
             <br/>
              <!--I'm experiementing with the idea of gifs -->
-            <div class="well well-lg"><img class="img img-circle mood-gif" src="http://media.giphy.com/media/pwX2FyYUCvxp6/giphy.gif" alt="test"></div>
+            <div class="well well-lg"><img class="img-responsive img-circle mood-gif" src="http://media.giphy.com/media/pwX2FyYUCvxp6/giphy.gif" alt="test"></div>
         </div>
     </div>
     <div class="col-md-4 col-sm-3 featured-mood">
         <!-- I'd like the following change dynamically with the search input -->
         <h3 class="panel-heading">Latest Mood Created</h3>
-        <div class="panel">
+        <div class="panel panel-body">
             <ul class="moodlist-animate-container list-unstyled">
                 <li class="animate-repeat featuredMood featuredMoodList{{$index + 1}}" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
                     [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
@@ -51,7 +49,7 @@
             </ul>
         </div>
         <h3 class="panel-heading">Highest Rated Mood</h3>
-        <div class="panel">
+        <div class="panel panel-body">
             <ul class="moodlist-animate-container list-unstyled">
                 <li class="animate-repeat featuredMood featuredMoodList{{$index + 1}}" ng-repeat="mood in ratedMoodlist | orderByPriority | filter:search:strict">
                     [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
@@ -59,7 +57,7 @@
             </ul>
         </div>
         <h3 class="panel-heading">Most Shared Mood</h3>
-        <div class="panel">
+        <div class="panel panel-body">
             <ul class="moodlist-animate-container list-unstyled">
                 <li class="animate-repeat featuredMood featuredMoodList{{$index + 1}}" ng-repeat="mood in sharedMoodlist | orderByPriority | filter:search:strict">
                     [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.

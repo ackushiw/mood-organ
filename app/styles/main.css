@@ -8,7 +8,7 @@ h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
 }
 /* Panel background */
-.panel{
+.well, .panel{
   background: rgb(155, 155, 155) transparent;
   background: rgba(155, 155, 155, 0.5);
 }
