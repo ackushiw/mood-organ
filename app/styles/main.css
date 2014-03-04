@@ -22,15 +22,19 @@ h1, h2, h3, h4 ,h5 {
 }
 .featuredMoodList2{
   font-size: 130%;
+  opacity: 0.75;
 }
 .featuredMoodList3{
   font-size: 100%;
+  opacity: 0.5;
 }
 .featuredMoodList4{
   font-size: 80%;
+  opacity: 0.25;
 }
 .featuredMoodList5{
   font-size: 50%;
+  opacity: 0.1;
 }
 /*Mood Gif*/
 .mood-gif{
