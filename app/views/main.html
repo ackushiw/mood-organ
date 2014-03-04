@@ -1,52 +1,69 @@
-<div class="moodNav"></div>
+<div class="back-gif" style="opacity:{{0 + keypress}};"></div>
 <div class="row">
-  <div class="col-md-4 col-sm-3">
-    <div ng-show-auth="login" class="moodCreation"></div>
-  </div>
-  <div class="col-md-4 col-sm-6 well well-lg">
-    <div id="search" class="main-search">
-      <h1 style="text-align: center;">Mood Organ</h1>
-      <div id="defaultSearch" class="collapse in collapseSearch">
-        <input class="form-control input-lg" type="search" ng-model="search" placeholder="Search Moods..." />
-      </div>
-      <br/>
-      <ul class="moodlist-animate-container list-unstyled">
-        <li class="animate-repeat" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict">
-          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
-        </li>
-      </ul>
-      <button class="btn-lg btn-danger pull-right" data-toggle="" data-target="">Share Mood</button>
-
-      <!--I'm experiementing with the idea of gifs -->
-      <img class="img-responsive img-circle mood-gif" src="http://media.giphy.com/media/pwX2FyYUCvxp6/giphy.gif" alt="test">     
-    </div>    
-  </div>
-  <div class="col-md-4 col-sm-3 featured-mood">
-  <!-- I'd like the following change dynamically with the search input -->
-    <h3>Latest Mood Created</h3>       
-    <div class="well well-lg">
-      <ul class="moodlist-animate-container list-unstyled">
-        <li class="animate-repeat" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
-          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
-        </li>                        
-      </ul>                                        
+    <div class="col-md-4 col-sm-3">
+        <div ng-show-auth="login" class="moodCreation"></div>
     </div>
-    <h3>Highest Rated Mood</h3>       
-    <div class="well well-lg">
-      <ul class="moodlist-animate-container list-unstyled">
-        <li class="animate-repeat" ng-repeat="mood in ratedMoodlist | orderByPriority | filter:search:strict">
-          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
-        </li>                        
-      </ul>                                        
+    <div class="col-md-4 col-sm-6 well well-lg">
+        <div class="nav">
+            <ul ng-show-auth="logout" class="nav navbar-nav navbar-left nav-pills">
+                <li><a href="#">About</a>
+                </li>
+                <li ng-show-auth="logout"><a href="#">{{auth.user.username}}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right nav-pills">
+                <li ng-show-auth="logout"><a href="#">{{auth.user.username}}</a>
+                </li>
+                <li><a href="#">Support</a>
+                </li>
+                <li ng-show-auth="logout"><a class="btn-primary" type="button" data-toggle="modal" data-target="#loginModal" href="#">Log on</a>
+                </li>
+                <li ng-show-auth="login"><a class="btn-danger" ng-click="simpleLogin.logout()" href="#">Log off</a>
+                </li>
+            </ul>
+        </div>
+        <div id="search" class="main-search">
+            <h1 style="text-align: center;">Mood Organ</h1>
+            <div id="defaultSearch" class="collapse in collapseSearch">
+                <input class="form-control input-lg" type="search" ng-model="search" ng-keydown="keypress = keypress + 0.01" ng-init="keypress = 0" placeholder="Search Moods..." />
+            </div>
+            <br/>
+            <ul class="moodlist-animate-container list-unstyled">
+                <li class="animate-repeat" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict">
+                    [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+                </li>
+            </ul>
+            <button class="btn-lg btn-danger pull-right" data-toggle="" data-target="" ng-click="keypress = 0">Share Mood</button>
+             <!--I'm experiementing with the idea of gifs -->
+            <img class="img-responsive img-circle mood-gif" src="http://media.giphy.com/media/pwX2FyYUCvxp6/giphy.gif" alt="test">
+        </div>
     </div>
-    <h3>Most Shared Mood</h3>
-    <div class="well well-lg">
-      <ul class="moodlist-animate-container list-unstyled">
-        <li class="animate-repeat" ng-repeat="mood in sharedMoodlist | orderByPriority | filter:search:strict">
-          [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
-        </li>
-      </ul>
+    <div class="col-md-4 col-sm-3 featured-mood">
+        <!-- I'd like the following change dynamically with the search input -->
+        <h3>Latest Mood Created</h3>
+        <div class="well well-lg">
+            <ul class="moodlist-animate-container list-unstyled">
+                <li class="animate-repeat" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
+                    [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+                </li>
+            </ul>
+        </div>
+        <h3>Highest Rated Mood</h3>
+        <div class="well well-lg">
+            <ul class="moodlist-animate-container list-unstyled">
+                <li class="animate-repeat" ng-repeat="mood in ratedMoodlist | orderByPriority | filter:search:strict">
+                    [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+                </li>
+            </ul>
+        </div>
+        <h3>Most Shared Mood</h3>
+        <div class="well well-lg">
+            <ul class="moodlist-animate-container list-unstyled">
+                <li class="animate-repeat" ng-repeat="mood in sharedMoodlist | orderByPriority | filter:search:strict">
+                    [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </div>
 <login-modal></login-modal>

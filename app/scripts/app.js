@@ -23,7 +23,7 @@ moodApp.config(function ($routeProvider) {
     .when('/creation', {
       authRequired: false, // if true, must log in before viewing this page
       templateUrl: 'views/mood-creation.html',
-      controller: 'LoginCtrl'
+      controller: 'MainCtrl'
     })
     .otherwise({
         redirectTo: '/'
