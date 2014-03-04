@@ -8,7 +8,7 @@ h1, h2, h3, h4 ,h5 {
   font-family: 'Aldrich', sans-serif;
 }
 /* Well background */
-.well{
+.well,.panel{
   background: rgb(155, 155, 155) transparent;
   background: rgba(155, 155, 155, 0.5);
 }
@@ -28,6 +28,9 @@ h1, h2, h3, h4 ,h5 {
   -o-background-size: cover;
   background-size: cover;
 }
+/*About Directive*/
+.about-heading{
+  text-align: right;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
