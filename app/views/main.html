@@ -1,8 +1,11 @@
 <div class="back-gif" style="opacity:{{0 + keypress}};"></div>
 <div class="row">
     <div class="col-md-4 col-sm-3">
-        <div ng-show-auth="login" class="moodCreation"></div>
+        
+        
         <div ng-show-auth="logout" class="aboutOrgan"></div>
+        <!-- temporary set creation to visible without login -->
+        <div ng-show-auth="logout" class="moodCreation"></div>
     </div>
     <div class="col-md-4 col-sm-6 panel">
         <div class="nav">

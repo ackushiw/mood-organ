@@ -1,21 +1,24 @@
-<h3>Create a Mood</h3>
-<form class="form-horizontal" ng-show-auth="login" ng-submit="addMood($event)" role="form">
-  <div class="form-group">
-    <label class="sr-only">Number to ID Mood</label>
-    <input class="form-control" type="number" ng-model="idnumber" placeholder="Number to ID Mood" />
-  </div>
-  <div class="form-group">
-    <label class="sr-only">Mood description</label>
-    <input class="form-control" type="text" ng-model="mood" placeholder="Mood description" />
-  </div>
-  <div class="form-group">
-    <label class="sr-only">#tag</label>
-    <input type="text" class="form-control" ng-model="hash" placeholder="#tag" />
-  </div>
-  <div class="form-group">
-    <label class="sr-only">info</label>
-    <input type="text" class="form-control" ng-model="info" placeholder="info" />
-  </div>
-  <button class="btn btn-danger" type="submit" id="submit">Submit</button>
-</form>
+<h3 class="panel-heading about-heading">Create a Mood</h3>
+<div class="panel panel-body">
+	<p>Below is the Mood Creation area! Use the input fields provided to create you're own mood. Please keep it fun and non-offensive</p>
+    <form class="form-horizontal panel panel-body" ng-submit="addMood($event)" role="form">
+        <div class="form-group">
+            <label class="sr-only">Number to ID Mood</label>
+            <input class="form-control" type="number" ng-model="idnumber" placeholder="Number to ID Mood" />
+        </div>
+        <div class="form-group">
+            <label class="sr-only">Mood description</label>
+            <input class="form-control" type="text" ng-model="mood" placeholder="Mood description" />
+        </div>
+        <div class="form-group">
+            <label class="sr-only">#tag</label>
+            <input type="text" class="form-control" ng-model="hash" placeholder="#tag" />
+        </div>
+        <div class="form-group">
+            <label class="sr-only">info</label>
+            <input type="text" class="form-control" ng-model="info" placeholder="info" />
+        </div>
+        <button class="btn btn-danger btn-block" type="submit" id="submit">Submit</button>
+    </form>
+</div>
 <!-- <button class="btn btn-danger" ng-model="click" ng-click="addMood($event)">Submit</button> -->
