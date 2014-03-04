@@ -31,11 +31,7 @@
                 <input class="form-control input-lg" type="search" ng-model="search" ng-keydown="keypress = keypress + 0.01" ng-init="keypress = 0" placeholder="Search Moods..." />
             </div>
             <br/>
-            <ul class="moodlist-animate-container list-unstyled">
-                <li class="animate-repeat" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict">
-                    [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
-                </li>
-            </ul>
+            <mood-stream></mood-stream>            
             <button class="btn-lg btn-danger btn-block" data-toggle="" data-target="" ng-click="keypress = 0">Share Mood</button>
             <br/>
              <!--I'm experiementing with the idea of gifs -->
