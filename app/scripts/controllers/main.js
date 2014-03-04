@@ -14,7 +14,7 @@ angular.module('moodOrganApp')
   };
   //the search mood list should be the most recent, incorporating whatever is put in the search box
   // this will eventually be a search query to elastic search
-  $scope.searchMoodlist = syncData(moodPath, 10);
+  $scope.searchMoodlist = syncData(moodPath, 20);
   
   // this will be a search for the top shared moods over the last week/day/hour whatever (number of shares within a particular timeframe)
   // this is also possible in elastic search
