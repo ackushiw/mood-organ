@@ -20,7 +20,7 @@
                 </li>
                 <li ng-show-auth="logout"><a class="btn-primary" type="button" data-toggle="modal" data-target="#loginModal" href="#">Log on</a>
                 </li>
-                <li ng-show-auth="login"><a class="btn-danger" ng-click="simpleLogin.logout()" href="#">Log off</a>
+                <li ng-show-auth="login"><a class="btn-danger" ng-click="auth.$logout();" href="#">Log off</a>
                 </li>
             </ul>
         </div>

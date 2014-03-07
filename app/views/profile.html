@@ -1,5 +1,9 @@
-<h3 class="panel-heading about-heading">Profile: {{auth.user.name}}</h3>
+<h3 class="panel-heading about-heading">{{auth.user.name}}</h3>
 <div class="panel panel-body">
     <img class="img-rounded img-thumbnail" src="http://graph.facebook.com/{{auth.user.username}}/picture" alt="Profile Pic">
+    <img src="{{auth.user.photos}}" alt="" class="img-rounded img-thumbnail">
     <p>Profile info to go here</p>
+    <!-- following just testing access of auth models -->
+    <p>{{auth.user.entities}}</p>
+    <code>{{auth.user.photos}}</code>
 </div>
