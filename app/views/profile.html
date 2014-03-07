@@ -1,9 +1,12 @@
-<h3 class="panel-heading about-heading">{{auth.user.name}}</h3>
+<h3 class="panel-heading about-heading">{{auth.user.displayName}}</h3>
 <div class="panel panel-body">
-    <img class="img-rounded img-thumbnail" src="http://graph.facebook.com/{{auth.user.username}}/picture" alt="Profile Pic">
-    <img src="{{auth.user.photos}}" alt="" class="img-rounded img-thumbnail">
+	<h3>{{auth.user.provider | uppercase}}</h3>
+    <img class="img-rounded img-thumbnail" src="http://graph.facebook.com/{{auth.user.username}}/picture" width="100" height="100" alt="Facebook Profile Pic">
+    <img src="{{auth.user.photos}}" width="100" height="100" alt="Twitter Pic" class="img-rounded img-thumbnail">
+    <img src="https://plus.google.com/s2/photos/profile/{{auth.user.id}}?sz=100" width="100" height="100" alt="" class="img-rounded img-thumbnail">
     <p>Profile info to go here</p>
     <!-- following just testing access of auth models -->
     <p>{{auth.user.entities}}</p>
     <code>{{auth.user.photos}}</code>
+    <p></p>
 </div>
