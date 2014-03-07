@@ -41,7 +41,7 @@ angular.module('moodOrganApp')
             // must be logged in before I can write to my profile
             $scope.login(function() {
               simpleLogin.createProfile(user.uid, user.email);
-              $location.path('/account');
+              $location.path('/');
             });
           }
         });

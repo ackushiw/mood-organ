@@ -17,7 +17,7 @@ moodApp.config(function ($routeProvider) {
     })
     .when('/login', {
       authRequired: false, // if true, must log in before viewing this page
-      templateUrl: 'views/login.html',
+      templateUrl: 'views/login-modal.html',
       controller: 'LoginCtrl'
     })
     .when('/creation', {

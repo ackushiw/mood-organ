@@ -4,9 +4,8 @@
         
         
         <div ng-show-auth="logout" class="aboutOrgan"></div>
-        <!-- temporary set creation to visible without login -->
         <profile></profile>
-        <div ng-show-auth="logout" class="moodCreation"></div>
+        <div ng-show-auth="login" class="moodCreation"></div>
     </div>
     <div class="col-md-4 col-sm-6 panel">
         <div class="nav">
@@ -66,5 +65,6 @@
         </div>
     </div>
 </div>
+<about-modal></about-modal>
 <login-modal></login-modal>
 <support-modal></support-modal>
