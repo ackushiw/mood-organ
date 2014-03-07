@@ -2,7 +2,7 @@
 	<tbody id="accordion" ng-animate="'mood-animate'" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict" >
 		<tr >
 			<td><b>{{mood.id}}</b>:</td>
-			<td> {{mood.body}} </td>
+			<td> {{mood.body}}{{mood.title}}</td>
 			<td><a class="btn" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index + 1}}"></a></td>
 		</tr>
 		<tr id="collapse{{$index + 1}}" class="panel-collapse collapse">
