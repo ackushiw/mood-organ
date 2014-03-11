@@ -7,7 +7,8 @@ var moodApp = angular.module('moodOrganApp', [
   'ngSanitize',
   'ngRoute',
   'angularfire.login',
-  'firebase'
+  'firebase',
+  'ngAnimate'
 ]);
 moodApp.config(function ($routeProvider) {
   $routeProvider
