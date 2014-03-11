@@ -176,3 +176,38 @@ h1, h2, h3, h4 ,h5 {
   opacity:1;
   max-height:40px;
 }
+
+.animate-fall-list{
+
+}
+
+.animate-fall-list.ng-move,
+.animate-fall-list.ng-enter,
+.animate-fall-list.ng-leave {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  -o-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
+  -o-animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
+  animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
+}
+ 
+.animate-fall-list.ng-leave.ng-leave-active,
+.animate-fall-list.ng-move,
+.animate-fall-list.ng-enter {
+  
+  opacity:0;
+  max-height:0;
+}
+ 
+.animate-fall-list.ng-leave,
+.animate-fall-list.ng-move.ng-move-active,
+.animate-fall-list.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}

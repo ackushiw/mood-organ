@@ -58,7 +58,7 @@
         <h3 class="panel-heading">Featured Mood</h3>
         <div class="panel panel-body">
             <ul class="list-unstyled">
-                <li class="featuredMood featuredMoodList{{$index + 1}} animate-repeat" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
+                <li class="featuredMood featuredMoodList{{$index + 1}} animate-fall-list" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
                     [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
                 </li>
             </ul>
