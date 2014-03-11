@@ -176,7 +176,7 @@ h1, h2, h3, h4 ,h5 {
   opacity:1;
   max-height:40px;
 }
-
+/*Fall animation*/
 .animate-fall-list{
 
 }
@@ -184,6 +184,26 @@ h1, h2, h3, h4 ,h5 {
 .animate-fall-list.ng-move,
 .animate-fall-list.ng-enter,
 .animate-fall-list.ng-leave {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation: growHeight 500ms ease forwards;
+  -o-animation: growHeight 500ms ease forwards;
+  animation: growHeight 500ms ease forwards;
+}
+ 
+.animate-fall-list.ng-leave.ng-leave-active,
+.animate-fall-list.ng-move,
+.animate-fall-list.ng-enter {
+
+  opacity:0;
+  max-height:0;
+}
+ 
+.animate-fall-list.ng-leave,
+.animate-fall-list.ng-move.ng-move-active,
+.animate-fall-list.ng-enter.ng-enter-active {
   -webkit-backface-visibility: visible;
   -ms-backface-visibility: visible;
   -o-backface-visibility: visible;
@@ -195,19 +215,82 @@ h1, h2, h3, h4 ,h5 {
   -webkit-animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
   -o-animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
   animation: fallOffX 1000ms both, closeSpace 750ms ease forwards 500ms;
+  opacity:1;
+  max-height:40px;
+}
+/*Fly animation*/
+.animate-fly-list{
+  -webkit-perspective: 400px;
+  -ms-perspective: 400px;
+  -o-perspective: 400px;
+  perspective: 400px;
+  -webkit-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
+.animate-fly-list.ng-move,
+.animate-fly-list.ng-enter,
+.animate-fly-list.ng-leave {
+  --webkit-transition: all 500ms ease, opacity 250ms ease;
+  -o-transition: all 500ms ease, opacity 250ms ease;
+  transition: all 500ms ease, opacity 250ms ease;
+  -webkit-transform-origin: 50% 50% -50px;
+  -ms-transform-origin: 50% 50% -50px;
+  -o-transform-origin: 50% 50% -50px;
+  transform-origin: 50% 50% -50px;
+}
+.animate-fly-list.ng-enter{
+  -webkit-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  -o-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+.animate-fly-list.ng-leave{
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
  
-.animate-fall-list.ng-leave.ng-leave-active,
-.animate-fall-list.ng-move,
-.animate-fall-list.ng-enter {
+.animate-fly-list.ng-leave.ng-leave-active,
+.animate-fly-list.ng-move,
+.animate-fly-list.ng-enter {
   
   opacity:0;
   max-height:0;
 }
  
-.animate-fall-list.ng-leave,
-.animate-fall-list.ng-move.ng-move-active,
-.animate-fall-list.ng-enter.ng-enter-active {
+.animate-fly-list.ng-leave,
+.animate-fly-list.ng-move.ng-move-active,
+.animate-fly-list.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}
+/*expand*/
+
+ 
+.animate-expand-list.ng-leave.ng-leave-active,
+.animate-expand-list.ng-move,
+.animate-expand-list.ng-enter {
+-webkit-animation: shrinkHeight 500ms ease forwards;
+  -o-animation: shrinkHeight 500ms ease forwards;
+  animation: shrinkHeight 500ms ease forwards; 
+  opacity:0;
+  max-height:0;
+}
+ 
+.animate-expand-list.ng-leave,
+.animate-expand-list.ng-move.ng-move-active,
+.animate-expand-list.ng-enter.ng-enter-active {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation: growHeight 500ms ease forwards;
+  -o-animation: growHeight 500ms ease forwards;
+  animation: growHeight 500ms ease forwards;
   opacity:1;
   max-height:40px;
 }

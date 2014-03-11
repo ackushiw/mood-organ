@@ -1,5 +1,5 @@
 <table class="table table-hover table-condensed table-responsive">
-	<tbody id="accordion" class="animate-repeat" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict" >
+	<tbody id="accordion" class="animate-expand-list" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict" >
 		<tr class="test">
 			<td><b>{{mood.id}}</b>:</td>
 			<td> {{mood.body}}{{mood.title}}</td>
