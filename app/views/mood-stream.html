@@ -1,6 +1,6 @@
-<table class="table table-hover table-condensed table-responsive">
-	<tbody id="accordion" class="mood-animate" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict" >
-		<tr class="mood-animate">
+<table class="table table-hover table-condensed table-responsive effeckt-list" data-effeckt-type="expand-in">
+	<tbody id="accordion" class="repeat-item animate-repeat" ng-class="{'new-item': $last}" ng-repeat="mood in searchMoodlist | orderByPriority | filter:search:strict" >
+		<tr class="test">
 			<td><b>{{mood.id}}</b>:</td>
 			<td> {{mood.body}}{{mood.title}}</td>
 			<td><a class="btn" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index + 1}}"></a></td>
