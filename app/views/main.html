@@ -41,7 +41,7 @@
         <!-- I'd like the following change dynamically with the search input -->        
         <h3 class="panel-heading">Highest Rated Mood</h3>
         <div class="panel panel-body">
-            <ul class="list-unstyled example-animate-container">
+            <ul class="list-unstyled mood-animate-container">
                 <li class="animate-repeat featuredMood featuredMoodList{{$index + 1}}" ng-repeat="mood in ratedMoodlist | orderByPriority | filter:search:strict" ng-animate=" 'mood-animate' ">
                     <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} Rated up {{0 + mood.rating}} times.
                 </li>
@@ -49,7 +49,7 @@
         </div>
         <h3 class="panel-heading">Most Shared Mood</h3>
         <div class="panel panel-body">
-            <ul class="list-unstyled example-animate-container">
+            <ul class="list-unstyled mood-animate-container">
                 <li class="animate-repeat featuredMood featuredMoodList{{$index + 1}}" ng-repeat="mood in sharedMoodlist | orderByPriority | filter:search:strict" ng-animate=" 'mood-animate' ">
                     <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} Shared {{0 + mood.shared}} times
                 </li>
@@ -57,8 +57,8 @@
         </div>
         <h3 class="panel-heading">Featured Mood</h3>
         <div class="panel panel-body">
-            <ul class="list-unstyled example-animate-container">
-                <li ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}" class="featuredMood featuredMoodList{{$index + 1}}" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
+            <ul class="list-unstyled">
+                <li class="featuredMood featuredMoodList{{$index + 1}} animate-repeat" ng-repeat="mood in latestMoodlist | orderByPriority | filter:search:strict">
                     [{{$index + 1}}] <b>{{mood.id}}</b>: {{mood.title}}{{mood.body}} <i>created by <b>{{mood.from}}</b></i>.
                 </li>
             </ul>
