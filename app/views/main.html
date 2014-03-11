@@ -1,8 +1,8 @@
 <div class="back-gif" style="opacity:{{0 + keypress}};"></div>
 <div class="row">
     <div class="col-md-4 col-sm-3">
-        
-        
+
+
         <div ng-show-auth="logout" class="aboutOrgan"></div>
         <profile ng-show-auth="login"></profile>
         <div ng-show-auth="login" class="moodCreation"></div>
@@ -26,19 +26,26 @@
         </div>
         <div id="search" class="main-search">
             <h1 style="text-align:center;font-size:5em;">Mood Organ</h1>
-            <div id="defaultSearch" class="collapse in collapseSearch">
+            <div id="defaultSearch" class="panel input-group">
                 <input class="form-control input-lg" type="search" ng-model="search" ng-keydown="keypress = keypress + 0.01" ng-init="keypress = 0" placeholder="Search Moods..." />
+                <span class="input-group-btn animate-basic">
+                    <button class="btn btn-lg btn-warning" type="button" ng-click="clearSearch($event)">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                    </button>
+                </span>
             </div>
             <br/>
-            <mood-stream></mood-stream>            
+            <mood-stream></mood-stream>
             <button class="btn-lg btn-danger btn-block" data-toggle="" data-target="" ng-click="keypress = 0">Share Mood</button>
             <br/>
-             <!--I'm experiementing with the idea of gifs -->
-            <div class="well well-lg"><img class="img-responsive img-circle mood-gif" src="http://media.giphy.com/media/pwX2FyYUCvxp6/giphy.gif" alt="test"></div>
+            <!--I'm experiementing with the idea of gifs -->
+            <div class="well well-lg">
+                <img class="img-responsive img-circle mood-gif" src="http://media.giphy.com/media/pwX2FyYUCvxp6/giphy.gif" alt="test">
+            </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-3 featured-mood">
-        <!-- I'd like the following change dynamically with the search input -->        
+        <!-- I'd like the following change dynamically with the search input -->
         <h3 class="panel-heading">Highest Rated Mood</h3>
         <div class="panel panel-body">
             <ul class="list-unstyled mood-animate-container">

@@ -1,6 +1,20 @@
 <h3 class="panel-heading about-heading">Create a Mood</h3>
 <div class="panel panel-body">
-	<p>Below is the Mood Creation area! Use the input fields provided to create you're own mood. Please keep it fun and non-offensive</p>
+    <p>Below is the Mood Creation area! Use the input fields provided to create you're own mood. Please keep it fun and non-offensive</p>
+    <div ng-show="mood"><table class="table table-hover table-condensed table-responsive">
+            <thead>
+                <h3>possible duplicate</h3>
+            </thead>
+            <tbody id="accordion" class="animate-expand-list" ng-repeat="mood in createMoodlist | orderByPriority | filter:mood">
+                <tr class="test">
+                    <td><b>{{mood.id}}</b>:</td>
+                    <td>{{mood.body}}{{mood.title}}</td>
+                    <td>
+                        <a class="btn" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index + 1}}"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table></div>
     <form class="form-horizontal panel panel-body" ng-submit="addMood($event)" role="form">
         <div class="form-group">
             <label class="sr-only">Number to ID Mood</label>
