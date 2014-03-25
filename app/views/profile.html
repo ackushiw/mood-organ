@@ -12,7 +12,7 @@
     </div>
     <div class="mood-profile" ng-switch-when="google">
         <h3>{{auth.user.provider | uppercase}}</h3>
-        <img src="https://plus.google.com/s2/photos/profile/{{auth.user.id}}?sz=100" width="100" height="100" alt="" class="img-rounded img-thumbnail">
+        <img src="{{auth.user.thirdPartyUserData.picture}}" width="100" height="100" alt="" class="img-rounded img-thumbnail">
         <p>Google Profile info to go here</p>
     </div>
     <div class="mood-profile" ng-switch-default>
@@ -24,6 +24,7 @@
         </a>
     </div>
     <br/>
+
     <p>This is a web app using angular and firebase. The goal of this application is for people to have fun with sharing moods and creating moods to share. The idea is to keep it simple, for anyone to use and share.</p>
     </div>
 
@@ -35,5 +36,7 @@
     <!-- following just testing access of auth models -->
     <p>{{auth.user.entities}}</p>
     <code>{{auth.user.photos}}</code>
-    <p></p>
+    <pre>https://plus.google.com/s2/photos/profile/{{auth.user.id}}?sz=100</pre>
+     <img src="{{auth.user.thirdPartyUserData.picture}}" width="100" height="100" alt="" class="img-rounded img-thumbnail">
 </div>
+
