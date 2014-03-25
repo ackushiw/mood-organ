@@ -1,10 +1,37 @@
 <h3 class="panel-heading about-heading">{{auth.user.displayName}}</h3>
-<div class="panel panel-body">
-	<h3>{{auth.user.provider | uppercase}}</h3>
-    <img class="img-rounded img-thumbnail" src="http://graph.facebook.com/{{auth.user.username}}/picture" width="100" height="100" alt="Facebook Profile Pic">
-    <img src="{{auth.user.photos}}" width="100" height="100" alt="Twitter Pic" class="img-rounded img-thumbnail">
-    <img src="https://plus.google.com/s2/photos/profile/{{auth.user.id}}?sz=100" width="100" height="100" alt="" class="img-rounded img-thumbnail">
-    <p>Profile info to go here</p>
+<div class="panel panel-body" ng-switch on="auth.user.provider">
+    <div class="mood-profile" ng-switch-when="facebook">
+        <h3>{{auth.user.provider | uppercase}}</h3>
+        <img class="img-rounded img-thumbnail" src="http://graph.facebook.com/{{auth.user.username}}/picture" width="100" height="100" alt="Facebook Profile Pic">
+        <p>Facebook Profile info to go here</p>
+    </div>
+    <div class="mood-profile" ng-switch-when="twitter">
+        <h3>{{auth.user.provider | uppercase}}</h3>
+        <img src="{{auth.user.photos}}" width="100" height="100" alt="Twitter Pic" class="img-rounded img-thumbnail">
+        <p>Twitter Profile info to go here</p>
+    </div>
+    <div class="mood-profile" ng-switch-when="google">
+        <h3>{{auth.user.provider | uppercase}}</h3>
+        <img src="https://plus.google.com/s2/photos/profile/{{auth.user.id}}?sz=100" width="100" height="100" alt="" class="img-rounded img-thumbnail">
+        <p>Google Profile info to go here</p>
+    </div>
+    <div class="mood-profile" ng-switch-default>
+        <p>The Mood Organ is inspired from the book "Do Androids Dream Of Electric Sheep" by Philip K. Dick.</p>
+    <br/>
+    <div class="col-md-offset-4">
+        <a href="http://books.google.com/books/about/Do_Androids_Dream_Of_Electric_Sheep.html?id=MoEO9onVftUC">
+            <img src="http://bks3.books.google.com/books?id=MoEO9onVftUC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70MZQqIKxYyuZQsdebhrkAjVA5YYrxE19xcDpPpHuC2YfJ0tN7759DaakSAvRF1MvQ4_pE7BhkNQUVDYMleq5pJH8BkN1DD0cNGGuud4_9F8UFTAM5A9_NDfCZb5-CBHqxVHSLe" alt="Do androids dream of electric sheep image">
+        </a>
+    </div>
+    <br/>
+    <p>This is a web app using angular and firebase. The goal of this application is for people to have fun with sharing moods and creating moods to share. The idea is to keep it simple, for anyone to use and share.</p>
+    </div>
+
+
+    
+    
+    
+    
     <!-- following just testing access of auth models -->
     <p>{{auth.user.entities}}</p>
     <code>{{auth.user.photos}}</code>

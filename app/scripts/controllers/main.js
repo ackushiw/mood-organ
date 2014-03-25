@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('moodOrganApp')
-.controller('MainCtrl', function ($scope, syncData, moodPath) {
+.controller('MainCtrl', function ($scope, syncData, moodPath, $timeout) {
   $scope.emptyMood = {
     created: '',
     decription: '',
@@ -43,8 +43,16 @@ angular.module('moodOrganApp')
   };
   //clear search
   $scope.clearSearch = function() {
-    $scope.search = null
-    $scope.keypress = 0
+    $scope.search = null;
+    $scope.keypress = 0;
   };
+
+  var tick = function() {
+            
+    $scope.time = new Date();
+
+    $timeout(tick, 1000);
+  };
+  $timeout(tick, 1000);
 });
 

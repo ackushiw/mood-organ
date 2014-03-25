@@ -1,4 +1,5 @@
 <div class="back-gif" style="opacity:{{0 + keypress}};"></div>
+
 <div class="row">
     <div class="col-md-4 col-sm-3">
 
@@ -16,16 +17,26 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right nav-pills">
+                <li><a class="animate-fly-list" type="button" href="#">{{time | date:'mediumTime'}}</a>
+                </li>
+                <li class="hidden"><a type="button" href="#">{{time | date:'fullDate'}}</a>
+                </li>
                 <li><a type="button" data-toggle="modal" data-target="#supportModal" href="#">Support</a>
                 </li>
-                <li ng-show-auth="logout"><a class="btn-primary" type="button" data-toggle="modal" data-target="#loginModal" href="#">Log on</a>
+                <li ng-show-auth="logout">
+                    <a class="btn-primary" type="button" data-toggle="modal" data-target="#loginModal" href="#">
+                    Log on</a>
                 </li>
                 <li ng-show-auth="login"><a class="btn-danger" ng-click="auth.$logout();" href="#">Log off</a>
                 </li>
             </ul>
         </div>
+
         <div id="search" class="main-search">
             <h1 style="text-align:center;font-size:5em;">Mood Organ</h1>
+
+
+
             <div id="defaultSearch" class="panel input-group">
                 <input class="form-control input-lg" type="search" ng-model="search" ng-keydown="keypress = keypress + 0.01" ng-init="keypress = 0" placeholder="Search Moods..." />
                 <span class="input-group-btn animate-basic">
@@ -34,6 +45,7 @@
                     </button>
                 </span>
             </div>
+
             <br/>
             <mood-stream></mood-stream>
             <button class="btn-lg btn-danger btn-block" data-toggle="" data-target="" ng-click="keypress = 0">Share Mood</button>
